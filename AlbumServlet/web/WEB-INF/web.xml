@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+    <servlet>
+        <servlet-name>AlbumServlet</servlet-name>
+        <servlet-class>AlbumServlet</servlet-class>
+        <multipart-config>
+            <location>/tmp</location>
+            <max-file-size>20848820</max-file-size> <!-- e.g., 20 MB -->
+            <max-request-size>418018841</max-request-size> <!-- e.g., 400 MB -->
+            <file-size-threshold>1048576</file-size-threshold> <!-- e.g., 1 MB -->
+        </multipart-config>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AlbumServlet</servlet-name>
+        <url-pattern>/albums</url-pattern>
+    </servlet-mapping>
+
+    <!-- For GET to /albums/{albumID} -->
+    <servlet>
+        <servlet-name>AlbumIdServlet</servlet-name>
+        <servlet-class>AlbumIdServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>AlbumIdServlet</servlet-name>
+        <url-pattern>/albums/*</url-pattern>
+    </servlet-mapping>
+
+    <!--  Context  -->
+    <listener>
+        <listener-class>AppContextListener</listener-class>
+    </listener>
+</web-app>

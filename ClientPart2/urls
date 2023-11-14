@@ -1,0 +1,16 @@
+String localBaseUrl = "http://localhost:8080/AlbumServlet_war_exploded";
+String localBaseUrlGo = "http://localhost:8080";
+
+String baseUrl = "http://ServletLB-35269109.us-west-2.elb.amazonaws.com:8080/AlbumServlet2";
+String baseUrlGo = "http://52.11.164.121:8080";
+
+threadGroupSize = 10;
+numThreadGroups = 10;
+delaySeconds = 2;
+
+String imagePath = "/Users/willxzy/Downloads/MicrosoftTeams-image.png";
+/Users/willxzy/Downloads/MicrosoftTeams-reduced.png
+
+http://54.188.53.35:8080/AlbumServlet_db3
+http://MediumLB-673401268.us-west-2.elb.amazonaws.com:80/AlbumServlet_db3
+

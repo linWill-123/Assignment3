@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5e25ef80-bda9-49ee-9c49-5d1066471ef7" name="Changes" comment="final code">
+      <change beforePath="$PROJECT_DIR$/../AlbumServlet/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/AlbumIdServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../AlbumServlet/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/AlbumIdServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AlbumServlet/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/AlbumServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../AlbumServlet/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/AlbumServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AlbumServlet/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/AlbumStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/../AlbumServlet/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/AlbumStore.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2XUm485uKnSKtZaPK3AeBRSMymq" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/willxzy/Desktop/NEU/CS6650/Assignment2/ClientPart2",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.3632184",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/main/java" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5e25ef80-bda9-49ee-9c49-5d1066471ef7" name="Changes" comment="" />
+      <created>1698691839956</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1698691839956</updated>
+      <workItem from="1698691840992" duration="1002000" />
+      <workItem from="1698693036010" duration="5000" />
+      <workItem from="1698867946698" duration="2094000" />
+      <workItem from="1698958301117" duration="10736000" />
+      <workItem from="1698986354906" duration="30535000" />
+      <workItem from="1699127198912" duration="14637000" />
+      <workItem from="1699145370478" duration="8584000" />
+      <workItem from="1699210331058" duration="734000" />
+      <workItem from="1699219813762" duration="11000" />
+      <workItem from="1699242710351" duration="468000" />
+      <workItem from="1699247445331" duration="19000" />
+      <workItem from="1699345918941" duration="5059000" />
+      <workItem from="1699401881792" duration="5563000" />
+      <workItem from="1699427119397" duration="19303000" />
+    </task>
+    <task id="LOCAL-00001" summary="Added copy of ClientPart2 to A2">
+      <option name="closed" value="true" />
+      <created>1698692123999</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1698692123999</updated>
+    </task>
+    <task id="LOCAL-00002" summary="track unversioned gson jar file in AlbumServlet">
+      <option name="closed" value="true" />
+      <created>1698692157147</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1698692157147</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add copy of java client sdk to Assignment2">
+      <option name="closed" value="true" />
+      <created>1698692843418</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1698692843418</updated>
+    </task>
+    <task id="LOCAL-00004" summary="fix typo of executorService's fixedThreadPool size">
+      <option name="closed" value="true" />
+      <created>1699066502984</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1699066502984</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Rewrite the RunningThreads by breaking it into simpler classes">
+      <option name="closed" value="true" />
+      <created>1699141553718</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1699141553718</updated>
+    </task>
+    <task id="LOCAL-00006" summary="cleaner code">
+      <option name="closed" value="true" />
+      <created>1699247458962</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1699247458962</updated>
+    </task>
+    <task id="LOCAL-00007" summary="New executor service format">
+      <option name="closed" value="true" />
+      <created>1699402239003</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1699402239003</updated>
+    </task>
+    <task id="LOCAL-00008" summary="final code">
+      <option name="closed" value="true" />
+      <created>1699480954209</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1699480954209</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added copy of ClientPart2 to A2" />
+    <MESSAGE value="track unversioned gson jar file in AlbumServlet" />
+    <MESSAGE value="Add copy of java client sdk to Assignment2" />
+    <MESSAGE value="fix typo of executorService's fixedThreadPool size" />
+    <MESSAGE value="Rewrite the RunningThreads by breaking it into simpler classes" />
+    <MESSAGE value="cleaner code" />
+    <MESSAGE value="New executor service format" />
+    <MESSAGE value="final code" />
+    <option name="LAST_COMMIT_MESSAGE" value="final code" />
+  </component>
+</project>

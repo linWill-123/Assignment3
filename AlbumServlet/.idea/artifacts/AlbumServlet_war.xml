@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="AlbumServlet:war">
+    <output-path>$PROJECT_DIR$/out/artifacts/AlbumServlet_war</output-path>
+    <root id="archive" name="AlbumServlet_war.war">
+      <element id="artifact" artifact-name="AlbumServlet:war exploded" />
+    </root>
+  </artifact>
+</component>
