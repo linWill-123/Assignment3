@@ -8,12 +8,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
 
 @WebServlet(name = "ReviewServlet", value = "/review/*")
 public class ReviewServlet extends HttpServlet {
     private static final String QUEUE_NAME = "REVIEWS_QUEUE";
     private final String EXCHANGE_NAME = "REVIEWS_EXCHANGE";
     private static Connection connection;
+    private static BlockingQueue<Channel> channelPool;
+    private static final int POOL_SIZE = 100;
 
     @Override
     public void init() {
@@ -21,6 +25,13 @@ public class ReviewServlet extends HttpServlet {
             ConnectionFactory factory = new ConnectionFactory();
             factory.setHost("localhost");
             connection = factory.newConnection();
+            channelPool = new LinkedBlockingQueue<>(POOL_SIZE);
+
+            for (int i = 0; i < POOL_SIZE; i++) {
+                Channel channel = connection.createChannel();
+                channelPool.put(channel);
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
             throw new RuntimeException("Failed to establish RabbitMQ connection", e);
@@ -40,7 +51,10 @@ public class ReviewServlet extends HttpServlet {
         String albumID = pathParts[2];
         String message = albumID + "," + likeOrNot;
 
-        try (Channel channel = connection.createChannel()) {
+        Channel channel = null;
+
+        try {
+            channel = channelPool.take();
             channel.exchangeDeclare(EXCHANGE_NAME, "direct");
             channel.queueDeclare(QUEUE_NAME, false, false, false, null);
             channel.queueBind(QUEUE_NAME, EXCHANGE_NAME, "");
@@ -51,6 +65,15 @@ public class ReviewServlet extends HttpServlet {
         } catch (Exception e) {
             response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             e.printStackTrace(response.getWriter());
+        } finally {
+            if (channel != null) {
+                try {
+                    channelPool.put(channel);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+
         }
 
     }
@@ -58,7 +81,13 @@ public class ReviewServlet extends HttpServlet {
     @Override
     public void destroy() {
         try {
-            if (connection != null && connection.isOpen()) {
+            while (!channelPool.isEmpty()) {
+                Channel channel = channelPool.take();
+                if (channel.isOpen()) {
+                    channel.close();
+                }
+            }
+            if (connection.isOpen()) {
                 connection.close();
             }
         } catch (Exception e) {

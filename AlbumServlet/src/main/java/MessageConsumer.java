@@ -13,10 +13,8 @@ public class MessageConsumer implements Runnable {
     private final Connection connection;
 
 
-    public MessageConsumer() throws IOException, TimeoutException {
-        ConnectionFactory factory = new ConnectionFactory();
-        factory.setHost("localhost");
-        this.connection = factory.newConnection();
+    public MessageConsumer(Connection connection) {
+        this.connection = connection;
     }
 
     @Override
@@ -28,7 +26,7 @@ public class MessageConsumer implements Runnable {
             channel.queueDeclare(QUEUE_NAME, false, false, false, null);
             channel.queueBind(QUEUE_NAME,EXCHANGE_NAME,"");
 
-            System.out.println(" [*] Waiting for messages. To exit press CTRL+C");
+            System.out.println(" [*] Waiting for messages.");
 
             DeliverCallback deliverCallback = (consumerTag, delivery) -> {
                 String message = new String(delivery.getBody(), "UTF-8");

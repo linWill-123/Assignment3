@@ -2,6 +2,8 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
+import com.rabbitmq.client.Connection;
+import com.rabbitmq.client.ConnectionFactory;
 import db.DynamoDbTableManager;
 
 import java.io.IOException;
@@ -15,14 +17,22 @@ public class AppContextListener implements ServletContextListener {
         System.out.println("Web application is starting");
         /* Initialize DB Connection Client and Client*/
         DynamoDbTableManager.initializeDbManager();
+
+        /* Initialize RabbitMQ Connection for Consumer*/
+        ConnectionFactory factory = new ConnectionFactory();
+        factory.setHost("localhost");
         try {
-            /* Initialize Consumer Thread*/
-            MessageConsumer consumerService = new MessageConsumer();
-            Thread consumerThread = new Thread(consumerService);
-            consumerThread.start();
+            Connection connection = factory.newConnection();
+            int numConsumers = 100;
+            for (int i = 0; i < numConsumers; i++) {
+                Thread consumerThread = new Thread(new MessageConsumer(connection));
+                consumerThread.start();
+            }
+
         } catch (IOException | TimeoutException e) {
             throw new RuntimeException(e);
         }
+
     }
 
     @Override
