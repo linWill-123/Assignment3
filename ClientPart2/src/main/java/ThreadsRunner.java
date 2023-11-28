@@ -41,7 +41,7 @@ public class ThreadsRunner {
                 CountDownLatch innerGroupLatch = new CountDownLatch(threadGroupSize);
 
                 for (int j = 0; j < threadGroupSize; j++) {
-                    ProducerThread task = new ProducerThread(baseUrl, imagePath, 1000, innerGroupLatch);
+                    ProducerThread task = new ProducerThread(baseUrl, imagePath, 100, innerGroupLatch);
                     Future<LogResult> future = innerExecutorService.submit(task);
                     futures.add(future);
                 }
@@ -143,12 +143,12 @@ public class ThreadsRunner {
         } else {
             median = latencies.get(middle);
         }
-        System.out.println("Median: " + mean);
+        System.out.println("Median: " + median);
 
         // p99 (99th percentile)
         int p99Index = (int) Math.ceil(0.99 * latencies.size()) - 1;
         long p99Value = latencies.get(p99Index);
-        System.out.println("p99: " + mean);
+        System.out.println("p99: " + p99Value);
 
         // Min and Max
         long min = latencies.get(0);

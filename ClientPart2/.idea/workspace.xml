@@ -5,9 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5e25ef80-bda9-49ee-9c49-5d1066471ef7" name="Changes" comment="final code">
-      <change beforePath="$PROJECT_DIR$/../AlbumServlet/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/AlbumIdServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../AlbumServlet/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/AlbumIdServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AlbumServlet/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/AlbumServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../AlbumServlet/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/AlbumServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AlbumServlet/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/AlbumStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/../AlbumServlet/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/AlbumStore.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/Assignment3.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AlbumServlet/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AlbumServlet/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AlbumServlet/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/AppContextListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../AlbumServlet/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/AppContextListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AlbumServlet/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/db/DynamoDbTableManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/../AlbumServlet/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/db/DynamoDbTableManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AlbumServlet/src/main/java/AppContextListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AlbumServlet/src/main/java/AppContextListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AlbumServlet/src/main/java/MessageConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AlbumServlet/src/main/java/MessageConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AlbumServlet/src/main/java/ReviewServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AlbumServlet/src/main/java/ReviewServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DefaultAPIPostExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DefaultAPIPostExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ProducerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProducerThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ThreadsRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ThreadsRunner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +39,9 @@
   &quot;associatedIndex&quot;: 2
 }</component>
   <component name="ProjectId" id="2XUm485uKnSKtZaPK3AeBRSMymq" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -42,7 +53,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/willxzy/Desktop/NEU/CS6650/Assignment2/ClientPart2",
+    "last_opened_file_path": "/Users/willxzy/Desktop/NEU/CS6650/Assignment3/ClientPart2",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -85,6 +96,7 @@
       <workItem from="1699345918941" duration="5059000" />
       <workItem from="1699401881792" duration="5563000" />
       <workItem from="1699427119397" duration="19303000" />
+      <workItem from="1701060485634" duration="6815000" />
     </task>
     <task id="LOCAL-00001" summary="Added copy of ClientPart2 to A2">
       <option name="closed" value="true" />

@@ -1,6 +1,7 @@
 import io.swagger.client.ApiClient;
 import io.swagger.client.ApiException;
 import io.swagger.client.api.DefaultApi;
+import io.swagger.client.api.LikeApi;
 import io.swagger.client.model.AlbumInfo;
 import io.swagger.client.model.AlbumsProfile;
 import io.swagger.client.model.ImageMetaData;
@@ -14,6 +15,7 @@ import java.util.concurrent.Callable;
 public class ProducerThread implements Callable<LogResult> {
     private ApiClient client;
     private DefaultApi apiInstance;
+    private LikeApi likeApiInstance;
     private String imagePath;
     private int numIterations;
     private int numSuccess = 0;
@@ -25,6 +27,7 @@ public class ProducerThread implements Callable<LogResult> {
         this.client = new ApiClient();
         this.client.setBasePath(serverUrl);
         this.apiInstance = new DefaultApi(client);
+        this.likeApiInstance = new LikeApi(client);
         this.imagePath = imagePath;
         this.numIterations = numIterations;
         this.logEntries = new ArrayList<>();
@@ -43,6 +46,9 @@ public class ProducerThread implements Callable<LogResult> {
             ImageMetaData postResponse = doPost(image, profile);
             if (postResponse != null) {
                 doGet(postResponse.getAlbumID());
+                doLike(postResponse.getAlbumID());
+                doLike(postResponse.getAlbumID());
+                doDislike(postResponse.getAlbumID());
             }
         }
 
@@ -82,6 +88,62 @@ public class ProducerThread implements Callable<LogResult> {
         }
 
         return postResponse;
+    }
+
+    public void doLike(String albumId) {
+        boolean success = false;
+        int attempts = 0;
+        long latency;
+        long startTimestamp;
+
+        ImageMetaData postResponse = null;
+
+        while (!success && attempts < 5) {
+            attempts++;
+            startTimestamp = System.currentTimeMillis();
+            try {
+                likeApiInstance.review("like", albumId);
+                latency = System.currentTimeMillis() - startTimestamp;
+                logEntries.add(startTimestamp + "," + "LIKE" + "," + latency + "," + 200);
+                numSuccess++;
+                success = true; // Mark as success and break the loop
+            } catch (ApiException e) {
+                if (attempts >= 5) {
+                    latency = System.currentTimeMillis() - startTimestamp;
+                    logEntries.add(startTimestamp + "," + "LIKE" + "," + latency + "," + e.getCode());
+                    System.err.println("Attempt " + attempts + " Error in LIKE: " + e.getMessage());
+                    numFailure++; // Only increment failure after all retries have been attempted
+                }
+            }
+        }
+    }
+
+    public void doDislike(String albumId) {
+        boolean success = false;
+        int attempts = 0;
+        long latency;
+        long startTimestamp;
+
+        ImageMetaData postResponse = null;
+
+        while (!success && attempts < 5) {
+            attempts++;
+            startTimestamp = System.currentTimeMillis();
+            try {
+                likeApiInstance.review("dislike", albumId);
+                latency = System.currentTimeMillis() - startTimestamp;
+                logEntries.add(startTimestamp + "," + "DISLIKE" + "," + latency + "," + 200);
+                numSuccess++;
+                success = true; // Mark as success and break the loop
+            } catch (ApiException e) {
+                if (attempts >= 5) {
+                    latency = System.currentTimeMillis() - startTimestamp;
+                    logEntries.add(startTimestamp + "," + "DISLIKE" + "," + latency + "," + e.getCode());
+                    System.err.println("Attempt " + attempts + " Error in DISLIKE: " + e.getMessage());
+                    numFailure++; // Only increment failure after all retries have been attempted
+                }
+            }
+        }
     }
 
     public void doGet(String albumId) {
