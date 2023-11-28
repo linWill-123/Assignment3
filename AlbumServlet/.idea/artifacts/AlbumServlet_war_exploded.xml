@@ -54,6 +54,8 @@
           <element id="library" level="project" name="Maven: software.amazon.awssdk:third-party-jackson-core:2.21.12" />
           <element id="library" level="project" name="Maven: software.amazon.awssdk:utils:2.21.12" />
           <element id="library" level="project" name="Maven: software.amazon.eventstream:eventstream:1.0.1" />
+          <element id="library" level="project" name="Maven: com.rabbitmq:amqp-client:5.20.0" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.36" />
         </element>
       </element>
     </root>

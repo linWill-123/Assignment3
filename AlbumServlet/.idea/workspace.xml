@@ -9,11 +9,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7f90177-e1ed-49cc-be59-86cd1d62ac96" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/AlbumIdServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/AlbumIdServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/AlbumServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/AlbumServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/AlbumStore.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/AlbumStore.class" afterDir="false" />
+    <list default="true" id="f7f90177-e1ed-49cc-be59-86cd1d62ac96" name="Changes" comment=".war">
+      <change afterPath="$PROJECT_DIR$/../.idea/Assignment3.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/MessageConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ReviewServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/AlbumServlet_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/AlbumServlet_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/AppContextListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/AppContextListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/db/DynamoDbTableManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/db/DynamoDbTableManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AppContextListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AppContextListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/db/DynamoDbTableManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/DynamoDbTableManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ClientPart2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientPart2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientPart2/src/main/java/DefaultAPIPostExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientPart2/src/main/java/DefaultAPIPostExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientPart2/src/main/java/ProducerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientPart2/src/main/java/ProducerThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientPart2/src/main/java/ThreadsRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientPart2/src/main/java/ThreadsRunner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,28 +57,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/willxzy/Desktop/NEU/CS6650/Assignment2/AlbumServlet&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "extract.method.default.visibility": "private",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/willxzy/Desktop/NEU/CS6650/Assignment3/AlbumServlet",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java" />
@@ -185,6 +197,8 @@
       <workItem from="1699318076074" duration="16730000" />
       <workItem from="1699402288879" duration="5033000" />
       <workItem from="1699427111662" duration="13318000" />
+      <workItem from="1700004931468" duration="1987000" />
+      <workItem from="1701049114179" duration="21511000" />
     </task>
     <task id="LOCAL-00001" summary="added copy of java server AlbumServlet to A2">
       <option name="closed" value="true" />

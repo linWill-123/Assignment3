@@ -30,6 +30,17 @@
         <url-pattern>/albums/*</url-pattern>
     </servlet-mapping>
 
+    <!-- For POST to /review/{likeornot}/{albumId} -->
+    <servlet>
+        <servlet-name>ReviewServlet</servlet-name>
+        <servlet-class>ReviewServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ReviewServlet</servlet-name>
+        <url-pattern>/review/*</url-pattern>
+    </servlet-mapping>
+
     <!--  Context  -->
     <listener>
         <listener-class>AppContextListener</listener-class>

@@ -14,43 +14,56 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class DynamoDbTableManager {
-    private static final String TABLE_NAME = "Albums";
+    private static final String ALBUM_TABLE_NAME = "Albums";
+    private static final String LIKES_TABLE_NAME = "AlbumLikesDislikes";
     private static final String PRIMARY_KEY = "albumID";
     private static DynamoDbClient dynamoDbClient;
 
-
-
     // Call this method before using the DynamoDbTableManager
-    private static void initializeDbClient() {
+    public static void initializeDbManager() {
         AwsSessionCredentials awsCreds = AwsSessionCredentials.create(
-                "ASIA5NCUJV5CXS7YGIUD",
-                "73lxGxnGLlK+W9oaC0A4gIPO9SLU+gBqUv9j5ewJ",
-                "FwoGZXIvYXdzEJv//////////wEaDMqNO/FgeOsPGP9Y5SLLAVtkCxw0iIehpy5r7FN82eBZJsXzYlYA6Zznjr2KfPgbRGb6RcVJbw1CdmMsYpG6u36J8x8x8xxSNPGHC3Yg1kwHuO4T2fRsD7WuKo8CljhVLaOSkAjXM7aHnr2SZtP2D40o1sxR9aij2u6MT+ym3Utf4VE9XVoLQwUa/L7OHwsMhUjI60rOz3w2FjmoiWRu+65nvhsTei6rJTFEMqlHq/tzf915ai4GZBvbqi3+YFeQ/u4/Xa5JNaWThMASSihRWaTl8tdt8+JjAHQIKLuHr6oGMi3T6pAkD1C3Mu2+DhFb7FLHaT05CG2vplB8bCE3pUyBja1PP+ZvLUrP4vBjrFk="
+                "ASIA5NCUJV5C7OZWFYNC",
+                "bTrANI0SxRTQ+Xp7nl3bcT0Mj2tRwaladJScHCh4",
+                "FwoGZXIvYXdzEG4aDD46iV3xTMk7UY+YoSLLAcK2tdV0X4BQHiYGKPF3w/Nj1QtAfBglp1GQv79eSSPFPJFwj5/kOx/Rxvsv0UoIublM4QIs13BgA+1YtPP/eqLu+bpc/p04L9baRKLPnifnL2R1XE+1AzdIP4kYwXQxjvnmXi3s884rx8oNjiGXebkykLqKRSfDKTdD/ddH6b+PFCf1W56pOeIAaqciosDSeUeferq778RYSEuv5n3JC2BRqIRCuVy+W+d/u0swKRqh9XKA3ZdQhrTYJVKw5L/p4V6oCPGzbx9TRoe/KMTZlasGMi2cXj4APB786FXDh8YOqzR0VA2ezynk12Yrui/GWF1I2G8aaITODHq/h5R5plw="
         );
         // You would typically set the region to the region where your DynamoDB table is hosted
         dynamoDbClient = DynamoDbClient.builder()
                 .credentialsProvider(StaticCredentialsProvider.create(awsCreds))
                 .region(Region.US_WEST_2)
                 .build();
-    }
-    public static void initializeDbTable() {
-        initializeDbClient();
 
+        initializeDbTable();
+    }
+
+    public static void initializeDbTable() {
         try {
             DescribeTableResponse describeTableResponse = dynamoDbClient.describeTable(DescribeTableRequest.builder()
-                    .tableName(TABLE_NAME)
+                    .tableName(ALBUM_TABLE_NAME)
                     .build());
 
             // If we get here, it means the table exists
-            System.out.println("Table already exists: " + TABLE_NAME);
+            System.out.println("Table already exists: " + ALBUM_TABLE_NAME);
         } catch (DynamoDbException e) {
             // The table doesn't exist, create it
-            System.out.println("Table doesn't exists, creating table: " + TABLE_NAME);
-            createTable();
+            System.out.println("Table doesn't exists, creating table: " + ALBUM_TABLE_NAME);
+            createTable(ALBUM_TABLE_NAME);
+        }
+
+        try {
+            DescribeTableResponse describeTableResponse = dynamoDbClient.describeTable(DescribeTableRequest.builder()
+                    .tableName(LIKES_TABLE_NAME)
+                    .build());
+
+            // If we get here, it means the table exists
+            System.out.println("Table already exists: " + LIKES_TABLE_NAME);
+        } catch (DynamoDbException e) {
+            // The table doesn't exist, create it
+            System.out.println("Table doesn't exists, creating table: " + LIKES_TABLE_NAME);
+            createTable(LIKES_TABLE_NAME);
         }
     }
 
-    public static void createTable() {
+    private static void createTable(String tableName) {
         try {
             CreateTableRequest request = CreateTableRequest.builder()
                     .attributeDefinitions(AttributeDefinition.builder()
@@ -62,18 +75,17 @@ public class DynamoDbTableManager {
                             .keyType(KeyType.HASH) // Partition key
                             .build())
                     .billingMode(BillingMode.PAY_PER_REQUEST) // Set billing mode to on-demand
-                    .tableName(TABLE_NAME)
+                    .tableName(tableName)
                     .build();
 
             dynamoDbClient.createTable(request);
 
-            System.out.println("Table created successfully with on-demand capacity: " + TABLE_NAME);
+            System.out.println("Table created successfully with on-demand capacity: " + tableName);
         } catch (DynamoDbException e) {
             System.err.println("Table creation failed: " + e.getMessage());
             throw e;
         }
     }
-
 
     public static void putAlbum(Album album) {
         Map<String, AttributeValue> item = new HashMap<>();
@@ -81,14 +93,23 @@ public class DynamoDbTableManager {
         item.put("artist", AttributeValue.builder().s(album.getProfile().getArtist()).build());
         item.put("title", AttributeValue.builder().s(album.getProfile().getTitle()).build());
         item.put("year", AttributeValue.builder().s(album.getProfile().getYear()).build());
-
-
         if (album.getImage() != null && album.getImage().length > 0) {
             item.put("image", AttributeValue.builder().b(SdkBytes.fromByteArray(album.getImage())).build());
         }
 
+        putItem(item,ALBUM_TABLE_NAME);
+
+        Map<String, AttributeValue> likeItem = new HashMap<>();
+        likeItem.put("albumID", AttributeValue.builder().s(album.getId()).build());
+        likeItem.put("likeCount", AttributeValue.builder().n("0").build());
+        likeItem.put("dislikeCount", AttributeValue.builder().n("0").build());
+
+        putItem(likeItem,LIKES_TABLE_NAME);
+    }
+
+    public static void putItem(Map<String, AttributeValue> item, String tableName) {
         PutItemRequest request = PutItemRequest.builder()
-                .tableName(TABLE_NAME)
+                .tableName(tableName)
                 .item(item)
                 .build();
 
@@ -96,7 +117,7 @@ public class DynamoDbTableManager {
             PutItemResponse response = dynamoDbClient.putItem(request);
 
         } catch (ResourceNotFoundException e) {
-            System.err.format("Error: The Amazon DynamoDB table \"%s\" can't be found.\n", TABLE_NAME);
+            System.err.format("Error: The Amazon DynamoDB table \"%s\" can't be found.\n", tableName);
             System.err.println("Be sure that it exists and that you've typed its name correctly!");
             throw e;
 
@@ -109,7 +130,7 @@ public class DynamoDbTableManager {
 
     public static Album getAlbum(String albumId) {
         GetItemRequest request = GetItemRequest.builder()
-                .tableName(TABLE_NAME)
+                .tableName(ALBUM_TABLE_NAME)
                 .key(Map.of("albumID", AttributeValue.builder().s(albumId).build()))
                 .build();
 
@@ -143,6 +164,38 @@ public class DynamoDbTableManager {
             System.err.println(e.getMessage());
             throw e;
         }
+    }
+
+    public static void updateLikeDislike(String albumId, String action) {
+        UpdateItemRequest request = buildUpdateRequest(albumId, action);
+        try {
+            dynamoDbClient.updateItem(request);
+        } catch (DynamoDbException e) {
+            System.err.println("Unable to update like/dislike count: ");
+            System.err.println(e.getMessage());
+            throw e;
+        }
+    }
+
+    private static UpdateItemRequest buildUpdateRequest(String albumId, String action) {
+        String updateExpression;
+        if ("like".equals(action)) {
+            updateExpression = "SET likeCount = if_not_exists(likeCount, :start) + :inc";
+        } else if ("dislike".equals(action)) {
+            updateExpression = "SET dislikeCount = if_not_exists(dislikeCount, :start) + :inc";
+        } else {
+            throw new IllegalArgumentException("Invalid action: " + action);
+        }
+
+        return UpdateItemRequest.builder()
+                .tableName(LIKES_TABLE_NAME)
+                .key(Map.of("albumID", AttributeValue.builder().s(albumId).build()))
+                .updateExpression(updateExpression)
+                .expressionAttributeValues(Map.of(
+                        ":inc", AttributeValue.builder().n("1").build(),
+                        ":start", AttributeValue.builder().n("0").build()
+                ))
+                .build();
     }
 }
 
