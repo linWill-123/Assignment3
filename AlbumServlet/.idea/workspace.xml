@@ -9,18 +9,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7f90177-e1ed-49cc-be59-86cd1d62ac96" name="Changes" comment=".war">
+    <list default="true" id="f7f90177-e1ed-49cc-be59-86cd1d62ac96" name="Changes" comment="working version but with exceptionally long queue">
       <change afterPath="$PROJECT_DIR$/../.idea/Assignment3.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MessageConsumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ReviewServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/AlbumServlet_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/AlbumServlet_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/AppContextListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/AppContextListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/db/DynamoDbTableManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/db/DynamoDbTableManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/AppContextListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AppContextListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/db/DynamoDbTableManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/DynamoDbTableManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MessageConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MessageConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ReviewServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ReviewServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ClientPart2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientPart2/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ClientPart2/src/main/java/DefaultAPIPostExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientPart2/src/main/java/DefaultAPIPostExample.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ClientPart2/src/main/java/ProducerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientPart2/src/main/java/ProducerThread.java" afterDir="false" />
@@ -198,7 +194,7 @@
       <workItem from="1699402288879" duration="5033000" />
       <workItem from="1699427111662" duration="13318000" />
       <workItem from="1700004931468" duration="1987000" />
-      <workItem from="1701049114179" duration="21511000" />
+      <workItem from="1701049114179" duration="24925000" />
     </task>
     <task id="LOCAL-00001" summary="added copy of java server AlbumServlet to A2">
       <option name="closed" value="true" />
@@ -232,7 +228,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699480850695</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="working version but with exceptionally long queue">
+      <option name="closed" value="true" />
+      <created>1701153157874</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1701153157874</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,6 +247,7 @@
     <MESSAGE value="change to workspace.xml" />
     <MESSAGE value="final code" />
     <MESSAGE value=".war" />
-    <option name="LAST_COMMIT_MESSAGE" value=".war" />
+    <MESSAGE value="working version but with exceptionally long queue" />
+    <option name="LAST_COMMIT_MESSAGE" value="working version but with exceptionally long queue" />
   </component>
 </project>
