@@ -26,9 +26,12 @@ public class MessageConsumer implements Runnable {
             channel.queueDeclare(QUEUE_NAME, false, false, false, null);
             channel.queueBind(QUEUE_NAME,EXCHANGE_NAME,"");
 
+//            channel.basicQos(1);
+
             System.out.println(" [*] Waiting for messages.");
 
             DeliverCallback deliverCallback = (consumerTag, delivery) -> {
+//                channel.basicAck(delivery.getEnvelope().getDeliveryTag(), false);
                 String message = new String(delivery.getBody(), "UTF-8");
                 processMessage(message);
             };

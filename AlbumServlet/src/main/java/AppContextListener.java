@@ -23,7 +23,7 @@ public class AppContextListener implements ServletContextListener {
         factory.setHost("localhost");
         try {
             Connection connection = factory.newConnection();
-            int numConsumers = 100;
+            int numConsumers = 1000;
             for (int i = 0; i < numConsumers; i++) {
                 Thread consumerThread = new Thread(new MessageConsumer(connection));
                 consumerThread.start();
