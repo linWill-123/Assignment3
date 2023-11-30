@@ -98,7 +98,8 @@ public class ThreadsRunner {
         System.out.println("Successful Requests: " + totalSuccess);
         System.out.println("Failed Requests: " + totalFailure);;
 
-        calcMetrics(csvFilePath,"GET");
+        calcMetrics(csvFilePath,"LIKE");
+        calcMetrics(csvFilePath,"DISLIKE");
         calcMetrics(csvFilePath, "POST");
 
         if (doStep6) {

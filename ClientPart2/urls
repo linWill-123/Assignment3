@@ -11,6 +11,12 @@ delaySeconds = 2;
 String imagePath = "/Users/willxzy/Downloads/MicrosoftTeams-image.png";
 /Users/willxzy/Downloads/MicrosoftTeams-reduced.png
 
-http://54.188.53.35:8080/AlbumServlet_db3
+
+
+http://localhost:8080/AlbumServlet_war_exploded
+
+
+
+http://35.92.147.216:8080/ReviewServlet2
 http://MediumLB-673401268.us-west-2.elb.amazonaws.com:80/AlbumServlet_db3
 

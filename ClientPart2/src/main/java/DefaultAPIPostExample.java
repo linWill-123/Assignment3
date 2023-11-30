@@ -6,7 +6,7 @@ import java.io.File;
 
 public class DefaultAPIPostExample {
   public static void main(String[] args) {
-    String baseUrl = "http://localhost:8080/AlbumServlet_war_exploded";
+    String baseUrl = "http://54.149.184.150:8080/ReviewServlet3";
     ApiClient client = new ApiClient();
     client.setBasePath(baseUrl);
     DefaultApi apiInstance = new DefaultApi(client);
