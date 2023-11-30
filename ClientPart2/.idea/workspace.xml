@@ -4,18 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e25ef80-bda9-49ee-9c49-5d1066471ef7" name="Changes" comment="final code">
-      <change afterPath="$PROJECT_DIR$/../.idea/Assignment3.iml" afterDir="false" />
+    <list default="true" id="5e25ef80-bda9-49ee-9c49-5d1066471ef7" name="Changes" comment="add metric for like, dislike">
+      <change afterPath="$PROJECT_DIR$/../AlbumServlet/.idea/artifacts/AlbumServlet_war2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../AlbumServlet/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../AlbumServlet/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../AlbumServlet/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/AppContextListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/../AlbumServlet/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/AppContextListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../AlbumServlet/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/db/DynamoDbTableManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/../AlbumServlet/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/db/DynamoDbTableManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AlbumServlet/src/main/java/AppContextListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AlbumServlet/src/main/java/AppContextListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AlbumServlet/src/main/java/MessageConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AlbumServlet/src/main/java/MessageConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AlbumServlet/src/main/java/ReviewServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AlbumServlet/src/main/java/ReviewServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DefaultAPIPostExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DefaultAPIPostExample.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ProducerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProducerThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ThreadsRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ThreadsRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-client-generated/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../java-client-generated/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,25 +41,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/willxzy/Desktop/NEU/CS6650/Assignment3/ClientPart2",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.3632184",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/willxzy/Desktop/NEU/CS6650/Assignment3/ClientPart2&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.3632184&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -97,6 +92,7 @@
       <workItem from="1699401881792" duration="5563000" />
       <workItem from="1699427119397" duration="19303000" />
       <workItem from="1701060485634" duration="6815000" />
+      <workItem from="1701208855209" duration="18213000" />
     </task>
     <task id="LOCAL-00001" summary="Added copy of ClientPart2 to A2">
       <option name="closed" value="true" />
@@ -162,7 +158,23 @@
       <option name="project" value="LOCAL" />
       <updated>1699480954209</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="add doPost for likes and dislikes">
+      <option name="closed" value="true" />
+      <created>1701209176089</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1701209176089</updated>
+    </task>
+    <task id="LOCAL-00010" summary="add metric for like, dislike">
+      <option name="closed" value="true" />
+      <created>1701320893856</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1701320893856</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,6 +189,8 @@
     <MESSAGE value="cleaner code" />
     <MESSAGE value="New executor service format" />
     <MESSAGE value="final code" />
-    <option name="LAST_COMMIT_MESSAGE" value="final code" />
+    <MESSAGE value="add doPost for likes and dislikes" />
+    <MESSAGE value="add metric for like, dislike" />
+    <option name="LAST_COMMIT_MESSAGE" value="add metric for like, dislike" />
   </component>
 </project>

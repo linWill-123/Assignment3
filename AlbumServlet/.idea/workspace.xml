@@ -2,25 +2,20 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="AlbumServlet:war exploded" />
+      <artifact name="AlbumServlet_war2" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7f90177-e1ed-49cc-be59-86cd1d62ac96" name="Changes" comment="working version but with exceptionally long queue">
-      <change afterPath="$PROJECT_DIR$/../.idea/Assignment3.iml" afterDir="false" />
+    <list default="true" id="f7f90177-e1ed-49cc-be59-86cd1d62ac96" name="Changes" comment="war file">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/AlbumServlet_war2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/AppContextListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/AppContextListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/db/DynamoDbTableManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/db/DynamoDbTableManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/AppContextListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AppContextListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MessageConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MessageConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ReviewServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ReviewServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ClientPart2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientPart2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ClientPart2/src/main/java/DefaultAPIPostExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientPart2/src/main/java/DefaultAPIPostExample.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ClientPart2/src/main/java/ProducerThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientPart2/src/main/java/ProducerThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ClientPart2/src/main/java/ThreadsRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientPart2/src/main/java/ThreadsRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../java-client-generated/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../java-client-generated/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,29 +48,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "extract.method.default.visibility": "private",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/willxzy/Desktop/NEU/CS6650/Assignment3/AlbumServlet",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/willxzy/Desktop/NEU/CS6650/Assignment3/AlbumServlet&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java" />
@@ -87,7 +82,20 @@
       <recent name="model" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.80">
+    <configuration name="ConsumerMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="consumer.ConsumerMain" />
+      <module name="AlbumServlet" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="consumer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tomcat 9.0.80" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.80" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -175,6 +183,11 @@
         </option>
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ConsumerMain" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -195,6 +208,7 @@
       <workItem from="1699427111662" duration="13318000" />
       <workItem from="1700004931468" duration="1987000" />
       <workItem from="1701049114179" duration="24925000" />
+      <workItem from="1701209022059" duration="21503000" />
     </task>
     <task id="LOCAL-00001" summary="added copy of java server AlbumServlet to A2">
       <option name="closed" value="true" />
@@ -236,7 +250,39 @@
       <option name="project" value="LOCAL" />
       <updated>1701153157874</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="with connection pool added">
+      <option name="closed" value="true" />
+      <created>1701209151542</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1701209151542</updated>
+    </task>
+    <task id="LOCAL-00007" summary="fixed throughput issue with queue size as close to 0 as possible">
+      <option name="closed" value="true" />
+      <created>1701283696772</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1701283696772</updated>
+    </task>
+    <task id="LOCAL-00008" summary="fixed throughput issue with queue size as close to 0 as possible; reduce consumer thread size to 200 from 1000">
+      <option name="closed" value="true" />
+      <created>1701320823303</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1701320823303</updated>
+    </task>
+    <task id="LOCAL-00009" summary="war file">
+      <option name="closed" value="true" />
+      <created>1701320860106</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1701320860106</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,6 +294,10 @@
     <MESSAGE value="final code" />
     <MESSAGE value=".war" />
     <MESSAGE value="working version but with exceptionally long queue" />
-    <option name="LAST_COMMIT_MESSAGE" value="working version but with exceptionally long queue" />
+    <MESSAGE value="with connection pool added" />
+    <MESSAGE value="fixed throughput issue with queue size as close to 0 as possible" />
+    <MESSAGE value="fixed throughput issue with queue size as close to 0 as possible; reduce consumer thread size to 200 from 1000" />
+    <MESSAGE value="war file" />
+    <option name="LAST_COMMIT_MESSAGE" value="war file" />
   </component>
 </project>
