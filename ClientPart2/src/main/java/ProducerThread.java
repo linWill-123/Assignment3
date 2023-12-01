@@ -45,7 +45,6 @@ public class ProducerThread implements Callable<LogResult> {
         for (int i = 0; i < numIterations; i++) {
             ImageMetaData postResponse = doPost(image, profile);
             if (postResponse != null) {
-                doGet(postResponse.getAlbumID());
                 doLike(postResponse.getAlbumID());
                 doLike(postResponse.getAlbumID());
                 doDislike(postResponse.getAlbumID());
