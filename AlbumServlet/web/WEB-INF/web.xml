@@ -41,6 +41,18 @@
         <url-pattern>/review/*</url-pattern>
     </servlet-mapping>
 
+    <!-- For POST to /review/lookup/{albumId} -->
+    <servlet>
+        <servlet-name>ReviewIdServlet</servlet-name>
+        <servlet-class>ReviewIdServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ReviewIdServlet</servlet-name>
+        <url-pattern>/review/lookup/*</url-pattern>
+    </servlet-mapping>
+
+
     <!--  Context  -->
     <listener>
         <listener-class>AppContextListener</listener-class>

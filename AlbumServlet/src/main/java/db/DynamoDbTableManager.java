@@ -11,6 +11,7 @@ import software.amazon.awssdk.regions.Region;
 
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class DynamoDbTableManager {
@@ -22,9 +23,9 @@ public class DynamoDbTableManager {
     // Call this method before using the DynamoDbTableManager
     public static void initializeDbManager() {
         AwsSessionCredentials awsCreds = AwsSessionCredentials.create(
-                "ASIA5NCUJV5CXOSWQI5P",
-                "7P3Df1a7OvGl6byvUdrZL0PAxXzUP9Mjx6v+/upQ",
-                "FwoGZXIvYXdzEJ3//////////wEaDODXLyxWh7uxbE3QkCLLATPDVDOA0vxvW7/3hxp45qwUDlrMirk8rL4A7D1FZw3Ikb4yHBAQrpr5p/kIky+enSoZcVLIoFBFLsu0UMUi+aTntw2yjnLu9l88U9eCo9myPMHtMXYypQi4CDPN75I98b7sxYeMYhxKSTk37MG1AJe/Y0lK8fWXkxfuDF0FTBPkQVDqMnr9z1I6vBR6K9wvY0opC1kZYdeRZ0yMCVDAGO/nEw26LdjGhh1ySIz3PP/votwmk+tRQTVQlQxmsjxiJ4I33HhhG90jAXOzKJGKoKsGMi2djHJV2LmS/cHmYqf1GFbcgpluezeG91Pw5HXEe92d6Fv/6Wh+qbaQ8MSBQ04="
+                "ASIA5NCUJV5CU3IDAOAJ",
+                "i20nYuL/+Y+0tbQ4aBbOW+vH8cW0K3gwUJib37OR",
+                "FwoGZXIvYXdzELT//////////wEaDCm46/+wNTNPnWsMyiLLATnrxrApNNta0ore96qFp39VYEmSEAi/eq5xlNl2hBBjv5Y75VulW8KchBV2vSYY4S0EhObRmhHZVdwtlrM+43J4BXFnZ9g1c4UNCm8UAo/tPjozODJzV9AbntpN/e5P+jUohf7Sd5RTtqhqZ4gRo1cgua4OQ1eTjX7KtTf617rgTNNKPHu9KBEzHLHU2Jzu3gA8yK1jNS9LkdCe63vg0boUKn/TC5grWiP22nJXzjJc5oZxXJBttSvuL98dcbw257jR/8mtE5LIv4r6KMaf3asGMi0aPDST/KtEC91bsu7W6nzIvrP4l4TVRN/xxbJV8F+28pJsIlptHjz17gNPsus="
         );
         // You would typically set the region to the region where your DynamoDB table is hosted
         dynamoDbClient = DynamoDbClient.builder()
@@ -166,6 +167,32 @@ public class DynamoDbTableManager {
         }
     }
 
+
+    public static int getAlbumLikes(String albumId) {
+        GetItemRequest request = GetItemRequest.builder()
+                .tableName(LIKES_TABLE_NAME)
+                .key(Map.of("albumID", AttributeValue.builder().s(albumId).build()))
+                .build();
+
+        try {
+            GetItemResponse response = dynamoDbClient.getItem(request);
+
+            if (response.item() != null && !response.item().isEmpty()) {
+                Map<String, AttributeValue> item = response.item();
+
+                return Integer.parseInt(item.get("likeCount").n());
+
+            } else {
+                // No item with the given albumID exists
+                return -1;
+            }
+        } catch (DynamoDbException e) {
+            System.err.println("Unable to get item: ");
+            System.err.println(e.getMessage());
+            throw e;
+        }
+    }
+
     public static void updateLikeDislike(String albumId, String action) {
         UpdateItemRequest request = buildUpdateRequest(albumId, action);
         try {
@@ -197,5 +224,6 @@ public class DynamoDbTableManager {
                 ))
                 .build();
     }
+
 }
 
