@@ -9,6 +9,8 @@ import io.swagger.client.model.ImageMetaData;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Vector;
+import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.Callable;
 
@@ -22,8 +24,9 @@ public class ProducerThread implements Callable<LogResult> {
     private int numFailure = 0;
     private final List<String> logEntries;
     private final CountDownLatch latch;
+    private Vector<String> albumIds;
 
-    public ProducerThread(String serverUrl, String imagePath, int numIterations, CountDownLatch latch) {
+    public ProducerThread(String serverUrl, String imagePath, int numIterations, CountDownLatch latch, Vector<String> albumIds) {
         this.client = new ApiClient();
         this.client.setBasePath(serverUrl);
         this.apiInstance = new DefaultApi(client);
@@ -32,6 +35,7 @@ public class ProducerThread implements Callable<LogResult> {
         this.numIterations = numIterations;
         this.logEntries = new ArrayList<>();
         this.latch = latch;
+        this.albumIds = albumIds;
     }
 
     @Override
@@ -73,6 +77,7 @@ public class ProducerThread implements Callable<LogResult> {
             try {
                 postResponse = apiInstance.newAlbum(image, profile);
                 latency = System.currentTimeMillis() - startTimestamp;
+                albumIds.add(postResponse.getAlbumID()); // add name to vector
                 logEntries.add(startTimestamp + "," + "POST" + "," + latency + "," + 200);
                 numSuccess++;
                 success = true; // Mark as success and break the loop

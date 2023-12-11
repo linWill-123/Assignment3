@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.util.Collections;
 import java.util.List;
 import java.util.Queue;
+import java.util.Vector;
 import java.util.concurrent.*;
 
 public class ThreadsRunner {
@@ -14,34 +15,38 @@ public class ThreadsRunner {
         // Initialization
         Queue<Future<LogResult>> futures = new ConcurrentLinkedQueue<>();
 
-        ExecutorService executorService = Executors.newFixedThreadPool(threadGroupSize);
-        CountDownLatch latch = new CountDownLatch(threadGroupSize);
-
-        for (int i = 0; i < threadGroupSize; i++) {
-            ProducerThread task = new ProducerThread(baseUrl, imagePath, 100, latch);
-            Future<LogResult> future = executorService.submit(task);
-            futures.add(future);
-        }
-
-        executorService.shutdown();
-        latch.await();
-
-
         // Start timing
         long testStartTime = System.currentTimeMillis();
 
         // Submit consumer thread to write post results to csv
 
-        executorService = Executors.newFixedThreadPool(numThreadGroups);
+        ExecutorService executorService = Executors.newFixedThreadPool(numThreadGroups);
         CountDownLatch groupLatch = new CountDownLatch(numThreadGroups);
 
+        Vector<String> albumIds = new Vector<>();
+
+        LikeProducerThread likeProducerThread1 = new LikeProducerThread(baseUrl, albumIds);
+        LikeProducerThread likeProducerThread2 = new LikeProducerThread(baseUrl, albumIds);
+        LikeProducerThread likeProducerThread3 = new LikeProducerThread(baseUrl, albumIds);
+
+        Future<LogResult> likeFuture1 = null;
+        Future<LogResult> likeFuture2 = null;
+        Future<LogResult> likeFuture3 = null;
+
+        ExecutorService likeExecutorService = Executors.newFixedThreadPool(3); // For 3 LikeProducerThreads
+
         for (int i = 0; i < numThreadGroups; i++) {
+            if (i == 1) {
+                likeFuture1 = likeExecutorService.submit(likeProducerThread1);
+                likeFuture2 = likeExecutorService.submit(likeProducerThread2);
+                likeFuture3 = likeExecutorService.submit(likeProducerThread3);
+            }
             executorService.submit(() -> {
                 ExecutorService innerExecutorService = Executors.newFixedThreadPool(threadGroupSize);
                 CountDownLatch innerGroupLatch = new CountDownLatch(threadGroupSize);
 
                 for (int j = 0; j < threadGroupSize; j++) {
-                    ProducerThread task = new ProducerThread(baseUrl, imagePath, 100, innerGroupLatch);
+                    ProducerThread task = new ProducerThread(baseUrl, imagePath, 100, innerGroupLatch,albumIds);
                     Future<LogResult> future = innerExecutorService.submit(task);
                     futures.add(future);
                 }
@@ -68,9 +73,15 @@ public class ThreadsRunner {
         executorService.shutdown();
         groupLatch.await();
 
+        likeExecutorService.shutdownNow(); // This will attempt to interrupt the running LikeProducerThreads
+        likeExecutorService.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS); //
+
+        futures.add(likeFuture1);
+        futures.add(likeFuture2);
+        futures.add(likeFuture3);
+
         // end timing
         long testEndTime = System.currentTimeMillis();
-
 
         long wallTime = (testEndTime - testStartTime) / 1000;
 
@@ -91,6 +102,7 @@ public class ThreadsRunner {
             }
         }
 
+
         long throughput = totalSuccess / wallTime;
 
         System.out.println("Wall Time: " + wallTime + " seconds");
@@ -101,6 +113,10 @@ public class ThreadsRunner {
         calcMetrics(csvFilePath,"LIKE");
         calcMetrics(csvFilePath,"DISLIKE");
         calcMetrics(csvFilePath, "POST");
+        calcMetrics(csvFilePath, "GET");
+
+        int totalNumGETRequests = likeFuture1.get().getNumSuccess() +  likeFuture2.get().getNumSuccess() +  likeFuture3.get().getNumSuccess();
+        System.out.println("Number of successful requests in GET likes: " + totalNumGETRequests);
 
         if (doStep6) {
             step6Calculation(csvFilePath,"step6.csv", wallTime, testStartTime);
