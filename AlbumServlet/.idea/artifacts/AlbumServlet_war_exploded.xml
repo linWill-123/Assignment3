@@ -56,6 +56,10 @@
           <element id="library" level="project" name="Maven: software.amazon.eventstream:eventstream:1.0.1" />
           <element id="library" level="project" name="Maven: com.rabbitmq:amqp-client:5.20.0" />
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.36" />
+          <element id="library" level="project" name="Maven: org.apache.kafka:kafka-clients:3.6.1" />
+          <element id="library" level="project" name="Maven: com.github.luben:zstd-jni:1.5.5-1" />
+          <element id="library" level="project" name="Maven: org.lz4:lz4-java:1.8.0" />
+          <element id="library" level="project" name="Maven: org.xerial.snappy:snappy-java:1.1.10.5" />
         </element>
       </element>
     </root>

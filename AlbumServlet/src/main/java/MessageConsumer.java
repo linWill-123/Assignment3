@@ -3,41 +3,42 @@ import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
 import com.rabbitmq.client.DeliverCallback;
 import db.DynamoDbTableManager;
+import org.apache.kafka.clients.consumer.Consumer;
+import org.apache.kafka.clients.consumer.ConsumerConfig;
+import org.apache.kafka.clients.consumer.ConsumerRecord;
+import org.apache.kafka.clients.consumer.ConsumerRecords;
+import org.apache.kafka.clients.consumer.KafkaConsumer;
 
 import java.io.IOException;
+import java.time.Duration;
+import java.util.Collections;
+import java.util.Properties;
 import java.util.concurrent.TimeoutException;
 
 public class MessageConsumer implements Runnable {
-    private final String QUEUE_NAME = "REVIEWS_QUEUE";
-    private final String EXCHANGE_NAME = "REVIEWS_EXCHANGE";
-    private final Connection connection;
-
-
-    public MessageConsumer(Connection connection) {
-        this.connection = connection;
-    }
+    private final String TOPIC_NAME = "reviews";
 
     @Override
     public void run() {
-        try {
-            boolean autoAck = true;
-            Channel channel = connection.createChannel();
-            channel.exchangeDeclare(EXCHANGE_NAME,"direct");
-            channel.queueDeclare(QUEUE_NAME, false, false, false, null);
-            channel.queueBind(QUEUE_NAME,EXCHANGE_NAME,"");
+        Properties props = new Properties();
+        props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
+        props.put(ConsumerConfig.GROUP_ID_CONFIG, "review-group");
+        props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringDeserializer");
+        props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringDeserializer");
+        props.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
 
-//            channel.basicQos(1);
+        try (Consumer<String, String> consumer = new KafkaConsumer<>(props)) {
+            consumer.subscribe(Collections.singletonList(TOPIC_NAME));
 
             System.out.println(" [*] Waiting for messages.");
 
-            DeliverCallback deliverCallback = (consumerTag, delivery) -> {
-//                channel.basicAck(delivery.getEnvelope().getDeliveryTag(), false);
-                String message = new String(delivery.getBody(), "UTF-8");
-                processMessage(message);
-            };
-
-            channel.basicConsume(QUEUE_NAME, autoAck, deliverCallback, consumerTag -> { });
-
+            while (true) {
+                Duration Duration = null;
+                ConsumerRecords<String, String> records = consumer.poll(Duration.ofMillis(100));
+                for (ConsumerRecord<String, String> record : records) {
+                    processMessage(record.value());
+                }
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }

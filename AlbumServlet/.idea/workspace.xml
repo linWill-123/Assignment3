@@ -2,23 +2,30 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="AlbumServlet:war exploded" />
+      <artifact name="AlbumServlet_war2" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7f90177-e1ed-49cc-be59-86cd1d62ac96" name="Changes" comment="war file">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/AlbumServlet_war2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ReviewIdServlet.java" afterDir="false" />
+    <list default="true" id="f7f90177-e1ed-49cc-be59-86cd1d62ac96" name="Changes" comment="server with GET likes">
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/AlbumServlet_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/AlbumServlet_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/AlbumServlet_war2/ReviewServlet3.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/AppContextListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/AppContextListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/MessageConsumer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/MessageConsumer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/ReviewServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/ReviewServlet.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/db/DynamoDbTableManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/db/DynamoDbTableManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/AppContextListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AppContextListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MessageConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MessageConsumer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ReviewServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ReviewServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/db/DynamoDbTableManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/db/DynamoDbTableManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ClientPart2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientPart2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientPart2/src/main/java/DefaultAPIPostExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientPart2/src/main/java/DefaultAPIPostExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ClientPart2/urls" beforeDir="false" afterPath="$PROJECT_DIR$/../ClientPart2/urls" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../java-client-generated/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../java-client-generated/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../java-client-generated/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../java-client-generated/README.md" afterDir="false" />
     </list>
@@ -36,6 +43,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="assignment4" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="LogFilters">
@@ -62,7 +74,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "extract.method.default.visibility": "private",
-    "git-widget-placeholder": "assignment4",
+    "git-widget-placeholder": "assignment4-kafka",
     "last_opened_file_path": "/Users/willxzy/Desktop/NEU/CS6650/Assignment3/AlbumServlet",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -231,7 +243,7 @@
       <workItem from="1701209022059" duration="24066000" />
       <workItem from="1701382882026" duration="6318000" />
       <workItem from="1701414735014" duration="375000" />
-      <workItem from="1702264233570" duration="17255000" />
+      <workItem from="1702264233570" duration="29557000" />
     </task>
     <task id="LOCAL-00001" summary="added copy of java server AlbumServlet to A2">
       <option name="closed" value="true" />
@@ -305,7 +317,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701320860106</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="server with GET likes">
+      <option name="closed" value="true" />
+      <created>1702326695598</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1702326695598</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,6 +341,7 @@
     <MESSAGE value="fixed throughput issue with queue size as close to 0 as possible" />
     <MESSAGE value="fixed throughput issue with queue size as close to 0 as possible; reduce consumer thread size to 200 from 1000" />
     <MESSAGE value="war file" />
-    <option name="LAST_COMMIT_MESSAGE" value="war file" />
+    <MESSAGE value="server with GET likes" />
+    <option name="LAST_COMMIT_MESSAGE" value="server with GET likes" />
   </component>
 </project>

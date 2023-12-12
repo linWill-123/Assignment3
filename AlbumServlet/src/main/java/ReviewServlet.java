@@ -1,6 +1,10 @@
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;
+import org.apache.kafka.clients.producer.KafkaProducer;
+import org.apache.kafka.clients.producer.Producer;
+import org.apache.kafka.clients.producer.ProducerRecord;
+
 import java.nio.charset.StandardCharsets;
 
 import javax.servlet.annotation.WebServlet;
@@ -8,34 +12,23 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.Properties;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
 @WebServlet(name = "ReviewServlet", value = "/review/*")
 public class ReviewServlet extends HttpServlet {
-    private static final String QUEUE_NAME = "REVIEWS_QUEUE";
-    private final String EXCHANGE_NAME = "REVIEWS_EXCHANGE";
-    private static Connection connection;
-    private static BlockingQueue<Channel> channelPool;
-    private static final int POOL_SIZE = 100;
+    private static final String TOPIC_NAME = "reviews";
+    private Producer<String, String> producer;
 
     @Override
     public void init() {
-        try {
-            ConnectionFactory factory = new ConnectionFactory();
-            factory.setHost("localhost");
-            connection = factory.newConnection();
-            channelPool = new LinkedBlockingQueue<>(POOL_SIZE);
+        Properties props = new Properties();
+        props.put("bootstrap.servers", "localhost:9092");
+        props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+        props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
 
-            for (int i = 0; i < POOL_SIZE; i++) {
-                Channel channel = connection.createChannel();
-                channelPool.put(channel);
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException("Failed to establish RabbitMQ connection", e);
-        }
+        producer = new KafkaProducer<>(props);
     }
 
     @Override
@@ -44,6 +37,7 @@ public class ReviewServlet extends HttpServlet {
         if (pathInfo == null) {
             response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
             response.getWriter().write("Invalid URL request");
+            return;
         }
 
         String[] pathParts = pathInfo.split("/");
@@ -51,47 +45,17 @@ public class ReviewServlet extends HttpServlet {
         String albumID = pathParts[2];
         String message = albumID + "," + likeOrNot;
 
-        Channel channel = null;
-
         try {
-            channel = channelPool.take();
-            channel.exchangeDeclare(EXCHANGE_NAME, "direct");
-            channel.queueDeclare(QUEUE_NAME, false, false, false, null);
-            channel.queueBind(QUEUE_NAME, EXCHANGE_NAME, "");
-
-            channel.basicPublish(EXCHANGE_NAME, "", null, message.getBytes(StandardCharsets.UTF_8));
+            producer.send(new ProducerRecord<>(TOPIC_NAME, message));
             response.setStatus(HttpServletResponse.SC_OK);
-
         } catch (Exception e) {
             response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
             e.printStackTrace(response.getWriter());
-        } finally {
-            if (channel != null) {
-                try {
-                    channelPool.put(channel);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-
         }
-
     }
 
     @Override
     public void destroy() {
-        try {
-            while (!channelPool.isEmpty()) {
-                Channel channel = channelPool.take();
-                if (channel.isOpen()) {
-                    channel.close();
-                }
-            }
-            if (connection.isOpen()) {
-                connection.close();
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        producer.close();
     }
 }

@@ -18,19 +18,10 @@ public class AppContextListener implements ServletContextListener {
         /* Initialize DB Connection Client and Client*/
         DynamoDbTableManager.initializeDbManager();
 
-        /* Initialize RabbitMQ Connection for Consumer*/
-        ConnectionFactory factory = new ConnectionFactory();
-        factory.setHost("localhost");
-        try {
-            Connection connection = factory.newConnection();
-            int numConsumers = 200;
-            for (int i = 0; i < numConsumers; i++) {
-                Thread consumerThread = new Thread(new MessageConsumer(connection));
-                consumerThread.start();
-            }
-
-        } catch (IOException | TimeoutException e) {
-            throw new RuntimeException(e);
+        int numConsumers = 200;
+        for (int i = 0; i < numConsumers; i++) {
+            Thread consumerThread = new Thread(new MessageConsumer());
+            consumerThread.start();
         }
 
     }
