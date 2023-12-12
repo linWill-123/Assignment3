@@ -17,6 +17,6 @@ http://localhost:8080/AlbumServlet_war_exploded
 
 
 
-http://35.92.147.216:8080/ReviewServlet2
+http://44.226.204.132:8080/a4_kafka1
 http://MediumLB-673401268.us-west-2.elb.amazonaws.com:80/AlbumServlet_db3
 
