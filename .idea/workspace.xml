@@ -4,8 +4,71 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e2f20a3-7c82-49de-9c77-0db772505753" name="Changes" comment="left over commit which change the number of consumer">
-      <change afterPath="$PROJECT_DIR$/AlbumServlet/.idea/artifacts/AlbumServlet_war2.xml" afterDir="false" />
+    <list default="true" id="5e2f20a3-7c82-49de-9c77-0db772505753" name="Changes" comment="delete unnnecessary GET operation">
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/.idea/aws.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/.swagger-codegen-ignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/.swagger-codegen/VERSION" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/.travis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/build.sbt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/docs/AlbumInfo.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/docs/AlbumsBody.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/docs/AlbumsProfile.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/docs/DefaultApi.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/docs/ErrorMsg.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/docs/ImageMetaData.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/docs/LikeApi.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/docs/Likes.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/git_push.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/gradle.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/src/main/AndroidManifest.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/src/main/java/io/swagger/client/ApiCallback.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/src/main/java/io/swagger/client/ApiClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/src/main/java/io/swagger/client/ApiException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/src/main/java/io/swagger/client/ApiResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/src/main/java/io/swagger/client/Configuration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/src/main/java/io/swagger/client/GzipRequestInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/src/main/java/io/swagger/client/JSON.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/src/main/java/io/swagger/client/Pair.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/src/main/java/io/swagger/client/ProgressRequestBody.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/src/main/java/io/swagger/client/ProgressResponseBody.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/src/main/java/io/swagger/client/StringUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/src/main/java/io/swagger/client/api/DefaultApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/src/main/java/io/swagger/client/api/LikeApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/src/main/java/io/swagger/client/auth/ApiKeyAuth.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/src/main/java/io/swagger/client/auth/Authentication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/src/main/java/io/swagger/client/auth/HttpBasicAuth.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/src/main/java/io/swagger/client/auth/OAuth.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/src/main/java/io/swagger/client/auth/OAuthFlow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/src/main/java/io/swagger/client/model/AlbumInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/src/main/java/io/swagger/client/model/AlbumsBody.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/src/main/java/io/swagger/client/model/AlbumsProfile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/src/main/java/io/swagger/client/model/ErrorMsg.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/src/main/java/io/swagger/client/model/ImageMetaData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/src/main/java/io/swagger/client/model/Likes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/src/test/java/io/swagger/client/api/DefaultApiTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/java-client-generated (2)/src/test/java/io/swagger/client/api/LikeApiTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbumServlet/out/artifacts/AlbumServlet_war2/ReviewServlet3.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbumServlet/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/AppContextListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/AlbumServlet/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/AppContextListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbumServlet/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/MessageConsumer.class" beforeDir="false" afterPath="$PROJECT_DIR$/AlbumServlet/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/MessageConsumer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbumServlet/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/ReviewServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/AlbumServlet/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/ReviewServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AlbumServlet/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/db/DynamoDbTableManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/AlbumServlet/out/artifacts/AlbumServlet_war_exploded/WEB-INF/classes/db/DynamoDbTableManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-client-generated/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/java-client-generated/.idea/vcs.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +77,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -31,7 +95,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;assignment4-kafka&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/willxzy/Desktop/NEU/CS6650/Assignment3&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -59,7 +123,11 @@
       <workItem from="1700175851067" duration="639000" />
       <workItem from="1701037590496" duration="4615000" />
       <workItem from="1701209199790" duration="899000" />
-      <workItem from="1701321534429" duration="2894000" />
+      <workItem from="1701321534429" duration="3258000" />
+      <workItem from="1701415143180" duration="38000" />
+      <workItem from="1702257312508" duration="2690000" />
+      <workItem from="1702343989787" duration="641000" />
+      <workItem from="1702361092414" duration="227000" />
     </task>
     <task id="LOCAL-00001" summary="copy files from A2">
       <option name="closed" value="true" />
@@ -93,7 +161,23 @@
       <option name="project" value="LOCAL" />
       <updated>1701325807542</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="left over commit which change MANIFEST">
+      <option name="closed" value="true" />
+      <created>1701325949807</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1701325949807</updated>
+    </task>
+    <task id="LOCAL-00006" summary="delete unnnecessary GET operation">
+      <option name="closed" value="true" />
+      <created>1701415174509</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1701415174509</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -104,6 +188,8 @@
     <MESSAGE value="some added files" />
     <MESSAGE value="screenshots" />
     <MESSAGE value="left over commit which change the number of consumer" />
-    <option name="LAST_COMMIT_MESSAGE" value="left over commit which change the number of consumer" />
+    <MESSAGE value="left over commit which change MANIFEST" />
+    <MESSAGE value="delete unnnecessary GET operation" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete unnnecessary GET operation" />
   </component>
 </project>
