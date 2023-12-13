@@ -2,12 +2,7 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
-import com.rabbitmq.client.Connection;
-import com.rabbitmq.client.ConnectionFactory;
 import db.DynamoDbTableManager;
-
-import java.io.IOException;
-import java.util.concurrent.TimeoutException;
 
 @WebListener
 public class AppContextListener implements ServletContextListener {

@@ -30,6 +30,17 @@
         <url-pattern>/albums/*</url-pattern>
     </servlet-mapping>
 
+    <!-- For GET to /ping -->
+    <servlet>
+        <servlet-name>PingServlet</servlet-name>
+        <servlet-class>PingServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>PingServlet</servlet-name>
+        <url-pattern>/ping</url-pattern>
+    </servlet-mapping>
+
     <!-- For POST to /review/{likeornot}/{albumId} -->
     <servlet>
         <servlet-name>ReviewServlet</servlet-name>

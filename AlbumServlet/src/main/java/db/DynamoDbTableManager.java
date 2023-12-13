@@ -23,9 +23,9 @@ public class DynamoDbTableManager {
     // Call this method before using the DynamoDbTableManager
     public static void initializeDbManager() {
         AwsSessionCredentials awsCreds = AwsSessionCredentials.create(
-                "ASIA5NCUJV5CVPX7OYGC",
-                "3XsMvU2zzQ5vuq8yeMpWs1SuQYg2TlSseMJkAZ4h",
-                "FwoGZXIvYXdzEL7//////////wEaDDmNtFNYrDCGz92kkyLLAZlgBcxVXb9O1oU0BGXF5NkXyT5r1j/hVrYI1CUrrd2cnEmRtokuijn3O7pKFwxE5fweqNmJ8zoMHCqsOPDctBVty1tw3oJj/XNWMFXmJ2PuaEmtzAoEs7D53dl8TPKU6jMA+Rl0e8Tvc9tUTn3ZHHZhY2BIYamtljJ+AcWFO+mr81JrUwnUe0fOK8b4IoEAYon8VpoELw6SXJZkVOaDXgCClkz+K+ZK8fc5WRvoJCih4f1qwppd6mCMxLygGYjdhOLajKBYK2HaOfUiKNHQ36sGMi02emHTESe4Rq7vN9ilmEr7OGyS3PcVllmlRok/85bZ2FWpMUvSwF8zwm+VUIo="
+                "ASIA5NCUJV5C372MX7WV",
+                "ZtMt2YWjbqJZ5kvKNqfxcw+N8CtoRrWJmAQue4qf",
+                "FwoGZXIvYXdzENb//////////wEaDN55G9D13iuZYej2wCLLASCLTf6OMHXVxb7Q1kgH2N24+YgLeTXdT4kIU4x4zqE1d+FdKRlRJzDpuSYi/7BG9RRTnm/cdHyWVBlITNxV5XgZG5ViNdI1f1CO5CsxKaMC8jXumeMQj8VyQYmLH8RJ1rU8YyVH7cX1uozqeP5RzcAVH1H/b00qg2uH7R6IpDdKxC6NUHMxhpnSB1dW6Kh9973oh3SU6D+tIWPWOVAysm5GcKU5h2SiHfKCZm7UM49NKApSmF7Tmpb3ry/YgITmijnyIE7r8Zfp1e6AKLHb5KsGMi0vGly8S5FPO9G5srrv9i2UAlWWGNgLs4ryqtUZdHpu1s6M9WluydREh1EOE1s="
         );
         // You would typically set the region to the region where your DynamoDB table is hosted
         dynamoDbClient = DynamoDbClient.builder()
